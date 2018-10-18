@@ -1,49 +1,39 @@
 #!/bin/bash
 
-function msg(){
-   set +x
-   set +v
-   
-   echo $@
-   
-   set -x
-   set -v
-}
-
-
 set -x
 set -v
 
 o=`pwd`
 
 #Base Home
-msg "
+echo "
  ###########
 # Base Home #
  ###########
-"
+" 2>/dev/null
 install "$o/home/*" "$HOME"
 
 #Oh-My-Zsh
-msg "
+echo "
  ###########
 # Oh-My-ZSH #
  ###########
-"
+" 2>/dev/null
 cd zsh_conf; ./install.sh
+cd $o
 
 #vim
-msg "
+echo "
  ###########
 #   Vimrc   #
  ###########
-"
+" 2>/dev/null
 ln -s "$o/.vim" "$HOME/"
-cd "$HOME/.vim/dein/"; ./installer.sh
 mkdir -p "$HOME/.config"
 cp -r nvim "$HOME/.config"
-/usr/bin/vim +"call dein#install()" +q
-/usr/bin/nvim +"call dein#install()" +q
+cd "$HOME/.vim/dein/"; ./installer.sh .
+/usr/bin/vim "+call dein#install()" "+q"
+/usr/bin/nvim "+call dein#install()" "+q"
 
 set +x
 set -x
