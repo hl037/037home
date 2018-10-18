@@ -67,8 +67,9 @@ if [ $ZSH_NAME = zsh ]; then
    hash -d dl=~/Downloads
 fi
 
-
-source /usr/share/nvm/init-nvm.sh
+if [ -e /usr/share/nvm/init-nvm.sh ]; then
+   source /usr/share/nvm/init-nvm.sh
+fi
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 
