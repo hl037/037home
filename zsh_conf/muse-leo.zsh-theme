@@ -117,10 +117,10 @@ PROMPT="
 %{$USER_COL%}%(!.#.$)>\
 %{$R%}"
 
-RPROMPT="\
-$git_status\
-$git_info\
-\$(get_battery_info)\
-%{$R%}"
+#RPROMPT="\
+#$git_status\
+#$git_info\
+#\$(get_battery_info)\
+#%{$R%}"
 
 
