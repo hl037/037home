@@ -41,6 +41,8 @@ alias vimpyw='/bin/nvim -c "NERDTree" `find . \( -iname .git -o -iname node_modu
 alias  vipyw='/bin/vim  -c "NERDTree" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.py'"'"' -o -iname '"'"'*.html'"'"' -print `'
 alias  vimjs='/bin/nvim -c "NERDTree" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.js'"'"' -o -iname '"'"'*.vue'"'"' -print`'
 alias   vijs='/bin/vim  -c "NERDTree" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.js'"'"' -o -iname '"'"'*.vue'"'"' -print`'
+alias vimdir='/bin/nvim -c "NERDTree"'
+alias  vidir='/bin/vim  -c "NERDTree"'
 
 # netkit
 export NETKIT_HOME=${HOME}/tmp/netkithome/netkit
