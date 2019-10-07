@@ -1,3 +1,3 @@
 [submodule ".vim"]
 	path = .vim
-	url = /home/leo/projects/repo/vimrc.git
+	url = https://gitea.dev.leo-flaventin.com/hl037/vimrc.git
