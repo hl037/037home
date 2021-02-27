@@ -10,9 +10,11 @@ alias symfony='phpu symfony'
 
 #some sudo aliases
 
-alias systemctl='sudo systemctl'
-alias pacman='sudo pacman'
-alias ip='sudo ip'
+if (whoami != root) ; then
+  alias systemctl='sudo systemctl'
+  alias pacman='sudo pacman'
+  alias ip='sudo ip'
+fi
 
 export EDITOR='vim'
 export NETKIT_HOME=/opt/netkit
