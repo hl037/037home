@@ -12,6 +12,7 @@ alias symfony='phpu symfony'
 
 alias systemctl='sudo systemctl'
 alias pacman='sudo pacman'
+alias ip='sudo ip'
 
 export EDITOR='vim'
 export NETKIT_HOME=/opt/netkit
@@ -27,6 +28,18 @@ alias tpon='synclient TouchpadOff=0'
 alias tpoff='synclient TouchpadOff=1'
 alias git='git --no-pager'
 alias py_vim='env PYTHONPATH=$(pwd) vim'
+alias mt5=\
+"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files/JFD MetaTrader 5/' "\
+"wine '/home/leo/.wine/drive_c/Program Files/JFD MetaTrader 5/terminal64.exe'"
+alias mt4=\
+"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/MQL4/Libraries' "\
+"wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/terminal.exe'"
+alias vmt4=\
+"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/MQL4/Libraries' "\
+"valgrind wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/terminal.exe'"
+alias mte=\
+"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/MQL4/Libraries' "\
+"wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/metaeditor.exe'"
 
 alias dl='wget -t 0 -c --read-timeout=3'
 alias vi='/bin/vim'
@@ -43,6 +56,14 @@ alias  vimjs='/bin/nvim -c "NERDTree" `find . \( -iname .git -o -iname node_modu
 alias   vijs='/bin/vim  -c "NERDTree" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.js'"'"' -o -iname '"'"'*.vue'"'"' -print`'
 alias vimdir='/bin/nvim -c "NERDTree"'
 alias  vidir='/bin/vim  -c "NERDTree"'
+
+alias py='python'
+alias ipy='ipython'
+alias py-='python -i'
+alias ipy-='ipython -i'
+
+alias dpy='python -m pdb -c continue'
+
 
 # netkit
 export NETKIT_HOME=${HOME}/tmp/netkithome/netkit
@@ -65,9 +86,13 @@ export NOSE_REDNOSE=1
 
 if [ $ZSH_NAME = zsh ]; then
    hash -d p=~/projects
+   hash -d c=~/.config
    hash -d s=~/projects/sources
    hash -d dl=~/Downloads
+   hash -d mt4='/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/'
+   hash -d mt5='/home/leo/.wine/drive_c/Program Files/JFD MetaTrader 5/'
 fi
+
 
 if [ -e /usr/share/nvm/init-nvm.sh ]; then
    source /usr/share/nvm/init-nvm.sh

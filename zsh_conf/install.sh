@@ -8,6 +8,6 @@ cd custom/plugins
 git submodule add -f https://github.com/zsh-users/zsh-syntax-highlighting.git
 install $p/muse-leo.zsh-theme "$g"/themes/muse-leo.zsh-theme 
 
-install $p/.profile $HOME
-install $p/.zshrc $HOME
+ln -s $p/.profile $HOME
+ln -s $p/.zshrc $HOME
 
