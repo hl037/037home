@@ -1,0 +1,34 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=fr-perso
+pkgver=0.3
+pkgrel=1
+epoch=
+pkgdesc="improved fr keymap"
+arch=("any")
+url=""
+license=('GPL')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=('fr_perso')
+noextract=()
+md5sums=('9f72b91363625c4f36c131e8fdbf4f22')
+
+package() {
+   mkdir "$pkgdir/usr/share/X11/xkb/symbols/" -p
+	install -m 755 "$srcdir/fr_perso" "$pkgdir/usr/share/X11/xkb/symbols/"
+}
