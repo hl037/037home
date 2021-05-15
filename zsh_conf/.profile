@@ -14,6 +14,7 @@ if (whoami != root) ; then
   alias systemctl='sudo systemctl'
   alias pacman='sudo pacman'
   alias ip='sudo ip'
+  alias arp-scan='sudo arp-scan'
 fi
 
 export EDITOR='vim'
@@ -101,5 +102,10 @@ if [ -e /usr/share/nvm/init-nvm.sh ]; then
 fi
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
+
+#C/C++
+export C_INCLUDE_PATH=${HOME}/.local/include:C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=${HOME}/.local/include:CPLUS_INCLUDE_PATH
+
 
 
