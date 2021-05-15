@@ -12,6 +12,7 @@ echo "
  ###########
 " 2>/dev/null
 install "$o/home/*" "$HOME"
+install "$o/home/.*" "$HOME"
 
 set +x
 set -x

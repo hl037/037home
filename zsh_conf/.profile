@@ -10,7 +10,7 @@ alias symfony='phpu symfony'
 
 #some sudo aliases
 
-if (whoami != root) ; then
+if [ `whoami` != root ] ; then
   alias systemctl='sudo systemctl'
   alias pacman='sudo pacman'
   alias ip='sudo ip'
