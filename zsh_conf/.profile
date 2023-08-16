@@ -45,6 +45,7 @@ alias mte=\
 "wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/metaeditor.exe'"
 
 alias dl='wget -t 0 -c --read-timeout=3'
+alias dla='wget -t 0 -c --read-timeout=3 -r -P . -nd -np'
 alias vi='/bin/vim'
 alias vim='/bin/nvim'
 alias pevim='pipenv run nvim'
@@ -59,6 +60,9 @@ alias  vimjs='/bin/nvim -c "NERDTree" `find . \( -iname .git -o -iname node_modu
 alias   vijs='/bin/vim  -c "NERDTree" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.js'"'"' -o -iname '"'"'*.vue'"'"' -print`'
 alias vimdir='/bin/nvim -c "NERDTree"'
 alias  vidir='/bin/vim  -c "NERDTree"'
+alias  vimss='/bin/nvim -S _me_vimsession.vim'
+alias   viss='/bin/vim  -S _me_vimsession.vim'
+alias socovimdir='/bin/nvim --cmd "let g:config_flavor=\"socotec\"" -c "NERDTree"'
 
 alias py='python'
 alias ipy='ipython'
@@ -67,11 +71,25 @@ alias ipy-='ipython -i'
 
 alias dpy='python -m pdb -c continue'
 
+alias gdbv='gdb -tui -iex vgdb'
+
+alias ku='kubectl --kubeconfig=kubeconfig'
+
+# by-pass PEP 668
+export PIP_BREAK_SYSTEM_PACKAGES=1
+
+
+# alias dkb='docker-compose build'
+# alias dke='docker-compose exec'
+# alias dku='docker-compose up'
+# alias dkd='docker-compose down'
+# alias dkr='docker-compose restart'
+
 
 # netkit
 export NETKIT_HOME=${HOME}/tmp/netkithome/netkit
 export MANPATH=${NETKIT_HOME}/man:${MANPATH}
-export PATH=${PATH}:${NETKIT_HOME}/bin:${HOME}/.gem/ruby/2.1.0/bin:${HOME}/.local/bin
+export PATH=${PATH}:${NETKIT_HOME}/bin:${HOME}/.gem/ruby/2.1.0/bin
 
 #Term
 export TERM='konsole-256color'
@@ -82,7 +100,10 @@ export TERM='konsole-256color'
 export _JAVA_OPTIONS='  -Dawt.useSystemAAFontSettings=on
                         -Dswing.aatext=true
                         -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel
-                        -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+                        -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel
+                        -Xms2g
+                        -Xmx8g
+                        '
 
 #Python
 export NOSE_REDNOSE=1
@@ -100,12 +121,23 @@ fi
 if [ -e /usr/share/nvm/init-nvm.sh ]; then
    source /usr/share/nvm/init-nvm.sh
 fi
-NPM_PACKAGES="${HOME}/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH"
+export NPM_PACKAGES="${HOME}/.npm-packages"
+
+export PATH="$NPM_PACKAGES/bin:$PATH"
+
+export PATH=${HOME}/.local/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/leo/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
 
 #C/C++
 export C_INCLUDE_PATH=${HOME}/.local/include:C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=${HOME}/.local/include:CPLUS_INCLUDE_PATH
+
+#Ocaml
+[[ ! -r /home/leo/.opam/opam-init/init.zsh ]] || source /home/leo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 
 
