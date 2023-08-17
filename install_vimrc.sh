@@ -20,7 +20,7 @@ ln -sf "$HOME/.vim/.vimrc" "$HOME/.vimrc"
 #/usr/bin/nvim "+call dein#install()" "+q"
 mkdir -p $HOME/.local/share/nvim/site/
 ln -sf $HOME/.vim/autoload $HOME/.local/share/nvim/site/autoload
-/usr/bin/vim "+PlugInstall" "+qall"
+/usr/bin/nvim "+PlugInstall" "+qall"
 
 set +x
 set -x
