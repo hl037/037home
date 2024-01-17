@@ -5,7 +5,7 @@
 
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=fr-perso
-pkgver=0.3
+pkgver=0.4
 pkgrel=1
 epoch=
 pkgdesc="improved fr keymap"
@@ -26,7 +26,8 @@ install=
 changelog=
 source=('fr_perso')
 noextract=()
-md5sums=('9f72b91363625c4f36c131e8fdbf4f22')
+md5sums=('6003d76d00b493e13b89b1eb1413142c')
+
 
 package() {
    mkdir "$pkgdir/usr/share/X11/xkb/symbols/" -p

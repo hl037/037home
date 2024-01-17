@@ -207,6 +207,8 @@ xkb_symbols "oss_prog" {
     key <AD11> { [        braceleft,      bracketleft,           dead_tilde,        dead_abovering ] }; // { [ ̃ ˚
     key <AD12> { [       braceright,     bracketright,               oslash,              Ooblique ] }; // } ] ø Ø
 
+
+    key <AC06> { [                h,                H,          ucircumflex,           Ucircumflex ] }; // h H û Û
     key <AC11> { [           dollar,          percent,           dead_acute,                Ugrave ] }; // $ % ' Ù
     key <BKSL> { [         asterisk,        backslash,           dead_grave,           dead_macron ] }; // * \ ` ̄
 

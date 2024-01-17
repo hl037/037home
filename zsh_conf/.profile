@@ -17,7 +17,7 @@ if [ `whoami` != root ] ; then
   alias arp-scan='sudo arp-scan'
 fi
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export NETKIT_HOME=/opt/netkit
 export PATH=/opt/netkit/bin:$PATH
 export PATH=$PATH:~/.usr/bin
@@ -38,7 +38,8 @@ alias vi='/bin/vim'
 alias vim='/bin/nvim'
 alias pevim='pipenv run nvim'
 
-alias cpcv='xclip -selection clipboard'
+# Replaced by python script...
+# alias cpcv='xclip -selection clipboard'
 
 alias  vimpy='/bin/nvim -c "NERDTree" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.py'"'"' -print`' 
 alias   vipy='/bin/vim  -c "NERDTree" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.py'"'"' -print`'
@@ -51,6 +52,19 @@ alias  vidir='/bin/vim  -c "NERDTree"'
 alias  vimss='/bin/nvim -S _me_vimsession.vim'
 alias   viss='/bin/vim  -S _me_vimsession.vim'
 alias socovimdir='/bin/nvim --cmd "let g:config_flavor=\"socotec\"" -c "NERDTree"'
+alias  vimpy='/bin/nvim -c "NERDTreeFocus" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.py'"'"' -print`' 
+alias   vipy='/bin/vim  -c "NERDTreeFocus" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.py'"'"' -print`'
+alias vimpyw='/bin/nvim -c "NERDTreeFocus" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.py'"'"' -o -iname '"'"'*.html'"'"' -print `'
+alias  vipyw='/bin/vim  -c "NERDTreeFocus" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.py'"'"' -o -iname '"'"'*.html'"'"' -print `'
+alias  vimjs='/bin/nvim -c "NERDTreeFocus" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.js'"'"' -o -iname '"'"'*.vue'"'"' -print`'
+alias   vijs='/bin/vim  -c "NERDTreeFocus" `find . \( -iname .git -o -iname node_modules \) -prune -o -iname '"'"'*.js'"'"' -o -iname '"'"'*.vue'"'"' -print`'
+alias vimdir='/bin/nvim -c "NERDTreeFocus"'
+alias  vidir='/bin/vim  -c "NERDTreeFocus"'
+alias  vimss='/bin/nvim -S _me_vimsession.vim'
+alias   viss='/bin/vim  -S _me_vimsession.vim'
+alias socovimdir='/bin/nvim --cmd "let g:config_flavor=\"socotec\"" -c "NERDTree"'
+
+alias ku='kubectl --kubeconfig=kubeconfig'
 
 alias py='python'
 alias ipy='ipython'
@@ -72,7 +86,6 @@ export PIP_BREAK_SYSTEM_PACKAGES=1
 # alias dku='docker-compose up'
 # alias dkd='docker-compose down'
 # alias dkr='docker-compose restart'
-
 
 # netkit
 export NETKIT_HOME=${HOME}/tmp/netkithome/netkit
@@ -108,10 +121,9 @@ fi
 
 if [ -e /usr/share/nvm/init-nvm.sh ]; then
    source /usr/share/nvm/init-nvm.sh
+   export NPM_PACKAGES="${HOME}/.nvm/versions/node/`nvm current`/bin"
+   export PATH="$NPM_PACKAGES/bin:$PATH"
 fi
-export NPM_PACKAGES="${HOME}/.npm-packages"
-
-export PATH="$NPM_PACKAGES/bin:$PATH"
 
 export PATH=${HOME}/.local/bin:$PATH
 
@@ -127,5 +139,10 @@ export CPLUS_INCLUDE_PATH=${HOME}/.local/include:CPLUS_INCLUDE_PATH
 #Ocaml
 [[ ! -r /home/leo/.opam/opam-init/init.zsh ]] || source /home/leo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-
+#ESP-IDF
+export IDF_TOOLS_PATH=$HOME/.local/opt/espressif
+if [ ! -e $IDF_TOOLS_PATH ] ; then
+  mkdir -p $IDF_TOOLS_PATH
+fi
+alias idf-export="source /opt/esp-idf/export.sh"
 
