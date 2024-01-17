@@ -11,8 +11,8 @@ echo "
 # Base Home #
  ###########
 " 2>/dev/null
-install "$o/home/*" "$HOME"
-install "$o/home/.*" "$HOME"
+cp -a "$o/home/*" "$HOME"
+cp -a "$o/home/.*" "$HOME"
 
 set +x
 set -x
