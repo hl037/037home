@@ -1,4 +1,4 @@
 [submodule ".vim"]
 	path = .vim
-	url = https://gitea.dev.leo-flaventin.com/hl037/vimrc.git
+	url = ssh://git@gitea.leo-flaventin.com:2222/hl037/vimrc.git
   branch = master
