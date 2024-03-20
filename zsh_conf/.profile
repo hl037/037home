@@ -45,7 +45,9 @@ alias mte=\
 "wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/metaeditor.exe'"
 
 alias dl='wget -t 0 -c --read-timeout=3'
-alias dla='wget -t 0 -c --read-timeout=3 -r -P . -nd -np'
+alias dlp="wget -t 0 -c --read-timeout=3 --user=hl037 --password='<3petitprince'"
+alias dla='wget -t 0 -c --read-timeout=3 -r -P . -nd -np --reject "*\?*"'
+alias dlpa="wget -t 0 -c --read-timeout=3 -r -P . -nd -np --user=hl037 --password='<3petitprince' --reject "'"*\?*"'
 alias vi='/bin/vim'
 alias vim='/bin/nvim'
 alias pevim='pipenv run nvim'
