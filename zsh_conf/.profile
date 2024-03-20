@@ -31,23 +31,9 @@ alias tpon='synclient TouchpadOff=0'
 alias tpoff='synclient TouchpadOff=1'
 alias git='git --no-pager'
 alias py_vim='env PYTHONPATH=$(pwd) vim'
-alias mt5=\
-"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files/JFD MetaTrader 5/' "\
-"wine '/home/leo/.wine/drive_c/Program Files/JFD MetaTrader 5/terminal64.exe'"
-alias mt4=\
-"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/MQL4/Libraries' "\
-"wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/terminal.exe'"
-alias vmt4=\
-"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/MQL4/Libraries' "\
-"valgrind wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/terminal.exe'"
-alias mte=\
-"env LD_LIBRARY_PATH='/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/MQL4/Libraries' "\
-"wine '/home/leo/.wine/drive_c/Program Files (x86)/MetaTrader 4 Terminal/metaeditor.exe'"
 
 alias dl='wget -t 0 -c --read-timeout=3'
-alias dlp="wget -t 0 -c --read-timeout=3 --user=hl037 --password='<3petitprince'"
 alias dla='wget -t 0 -c --read-timeout=3 -r -P . -nd -np --reject "*\?*"'
-alias dlpa="wget -t 0 -c --read-timeout=3 -r -P . -nd -np --user=hl037 --password='<3petitprince' --reject "'"*\?*"'
 alias vi='/bin/vim'
 alias vim='/bin/nvim'
 alias pevim='pipenv run nvim'
@@ -130,7 +116,7 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH=${HOME}/.local/bin:$PATH
 
 # pnpm
-export PNPM_HOME="/home/leo/.local/share/pnpm"
+export PNPM_HOME="$HOME.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
